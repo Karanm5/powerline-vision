@@ -1,0 +1,58 @@
+# PowerLine Vision — Training Configuration
+# Adjust paths and hyperparameters as needed for your environment
+
+# ── Dataset ────────────────────────────────────────────────────────────────
+dataset:
+  root: data/processed
+  train: data/processed/train
+  val: data/processed/val
+  test: data/processed/test
+  nc: 2                        # Number of classes
+  names: ['power_line', 'tower']
+
+# ── Model ──────────────────────────────────────────────────────────────────
+model:
+  architecture: yolov8s        # yolov8n (faster) or yolov8s (more accurate)
+  pretrained: true             # Fine-tune from COCO weights
+  weights: yolov8s.pt
+
+# ── Training ───────────────────────────────────────────────────────────────
+training:
+  epochs: 100
+  batch_size: 16
+  image_size: 640
+  learning_rate: 0.01
+  lr_final: 0.001              # Final LR (cosine decay)
+  warmup_epochs: 3
+  weight_decay: 0.0005
+  momentum: 0.937
+  patience: 20                 # Early stopping patience
+  save_period: 10              # Save checkpoint every N epochs
+  workers: 4
+  device: 0                    # GPU index; 'cpu' for CPU-only
+
+# ── Augmentation ───────────────────────────────────────────────────────────
+augmentation:
+  hsv_h: 0.015                 # Hue augmentation
+  hsv_s: 0.7                   # Saturation augmentation
+  hsv_v: 0.4                   # Value augmentation
+  degrees: 10.0                # Rotation
+  translate: 0.1
+  scale: 0.5
+  flipud: 0.1
+  fliplr: 0.5
+  mosaic: 1.0
+  mixup: 0.1
+  clahe: true                  # Contrast Limited Adaptive Histogram Equalisation
+
+# ── Evaluation ─────────────────────────────────────────────────────────────
+evaluation:
+  iou_threshold: 0.5
+  conf_threshold: 0.25
+  max_detections: 300
+
+# ── Output ─────────────────────────────────────────────────────────────────
+output:
+  results_dir: results
+  plots_dir: results/plots
+  weights_dir: results/weights
