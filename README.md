@@ -4,6 +4,8 @@
 ![YOLOv8](https://img.shields.io/badge/Model-YOLOv8-green)
 ![PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
+![PyPI](https://img.shields.io/pypi/v/powerline-vision)
+![HuggingFace](https://img.shields.io/badge/Demo-HuggingFace%20Spaces-yellow)
 
 ## Overview
 
