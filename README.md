@@ -14,6 +14,7 @@ This project develops an end-to-end deep learning pipeline for the **automatic d
 The pipeline combines YOLOv8 object detection with classical computer vision preprocessing (OpenCV) and produces confidence-scored bounding box detections suitable for downstream GIS integration and asset mapping workflows.
 
 **Live Demo:** https://karanm5-powerline-vision.hf.space
+**Python Package:** pip install powerline-vision
 
 ---
 
