@@ -83,13 +83,15 @@ Preprocessing uses **OpenCV** for image normalisation, contrast enhancement (CLA
 
 | Metric | Value |
 |---|---|
-| mAP@0.5 | — |
-| mAP@0.5:0.95 | — |
-| Precision | — |
-| Recall | — |
-| Inference speed (GPU) | — |
+| mAP@0.5 | 0.688 |
+| mAP@0.5:0.95 | 0.561 |
+| Precision | 0.758 |
+| Recall | 0.647 |
+| Inference speed (GPU) | 4.9ms per image (Tesla T4) |
+| Validation images | 359 |
+| Instances evaluated | 2,738 |
 
-*Results will be updated after training completes. See `notebooks/02_results_analysis.ipynb` for full evaluation breakdown.*
+*Trained for 50 epochs on YOLOv8s fine-tuned from COCO weights. Dataset: aerial power line imagery (cable detection). Hardware: Tesla T4 GPU.*
 
 ---
 
@@ -119,6 +121,34 @@ python src/evaluate.py --weights results/best.pt --data configs/config.yaml
 ```bash
 python scripts/inference.py --source path/to/image.jpg --weights results/best.pt
 ```
+
+---
+
+## Training Results
+
+Training curves and detection visualisations from the completed run:
+
+![Results](results/plots/results.png)
+![Confusion Matrix](results/plots/confusion_matrix.png)
+![PR Curve](results/plots/PR_curve.png)
+
+Sample detections on validation images:
+
+![Predictions](results/plots/val_batch0_pred.jpg)
+
+---
+
+## Training Results
+
+Training curves and detection visualisations from the completed run:
+
+![Results](results/plots/results.png)
+![Confusion Matrix](results/plots/confusion_matrix.png)
+![PR Curve](results/plots/PR_curve.png)
+
+Sample detections on validation images:
+
+![Predictions](results/plots/val_batch0_pred.jpg)
 
 ---
 

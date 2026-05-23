@@ -60,7 +60,7 @@ def train(config_path: str, resume_weights: str = None) -> None:
     aug_cfg = cfg["augmentation"]
     out_cfg = cfg["output"]
 
-    data_yaml = str(Path(dataset_cfg["root"]) / "dataset.yaml")
+    data_yaml = str(Path(dataset_cfg["root"]) / "data/processed/dataset.yaml")
     class_names = dataset_cfg["names"]
 
     # Validate dataset before starting

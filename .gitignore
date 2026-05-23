@@ -12,8 +12,6 @@ venv/
 env/
 
 # Data (raw downloads — large files not tracked)
-data/raw/
-data/processed/
 
 # Model weights
 *.pt
@@ -21,7 +19,6 @@ data/processed/
 *.onnx
 
 # Results and outputs
-results/
 
 # Jupyter
 .ipynb_checkpoints/
