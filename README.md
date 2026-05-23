@@ -138,20 +138,6 @@ Sample detections on validation images:
 
 ---
 
-## Training Results
-
-Training curves and detection visualisations from the completed run:
-
-![Results](results/plots/results.png)
-![Confusion Matrix](results/plots/confusion_matrix.png)
-![PR Curve](results/plots/PR_curve.png)
-
-Sample detections on validation images:
-
-![Predictions](results/plots/val_batch0_pred.jpg)
-
----
-
 ## Limitations and Future Work
 
 - Detection performance degrades under heavy occlusion from tree canopy — a known challenge in UK distribution networks
